@@ -9,37 +9,11 @@ Welcome to my study repository for my Bioinformatics Master's Degree! In this re
 
 ## Table of Contents
 
-1. [Foundations in Bio-Medicine (W23/24)](#foundations-in-bio-medicine-w2324)
-2. [Foundations in Computer Science (W23/24)](#foundations-in-computer-science-w2324)
-3. [Foundations in Mathematics and Statistics (W23/24)](#foundations-in-mathematics-and-statistics-w2324)
-4. [Introduction to Focus Areas (W23/24)](#introduction-to-focus-areas-w2324)
+1. [Foundations in Bio-Medicine (W23/24)](Foundations%20in%20Bio-Medicine%20W23W24.md)
+2. [Foundations in Computer Science (W23/24)](Foundations%20in%20Computer%20Science%20W23W24.md)
+3. [Foundations in Mathematics and Statistics (W23/24)](Foundations%20in%20Math%20and%20Stats%20W23W24.md)
+4. [Introduction to Focus Areas (W23/24)](Introduction%20to%20Focus%20Areas%20W23W24.md)
 
-## Foundations in Bio-Medicine (W23/24)
-
-- Course materials
-- Lecture notes
-- Assignments and solutions
-- Additional resources
-
-## Foundations in Computer Science (W23/24)
-
-- Lecture notes
-- Coding exercises and projects
-- Reference materials
-- Helpful links
-
-## Foundations in Mathematics and Statistics (W23/24)
-
-- Math concepts and formulas
-- Statistics principles
-- Problem-solving techniques
-- Practice exercises
-
-## Introduction to Focus Areas (W23/24)
-
-- Overview of various focus areas
-- Research papers and articles
-- Insights and reflections
 
 ## How to Use This Repository
 
