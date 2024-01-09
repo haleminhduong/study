@@ -9,10 +9,10 @@ Welcome to my study repository for my Bioinformatics Master's Degree! In this re
 
 ## Table of Contents
 
-1. [Foundations in Bio-Medicine (W23/24)](Foundations%20in%20Bio-Medicine%20W23W24.md)
-2. [Foundations in Computer Science (W23/24)](Foundations%20in%20Computer%20Science%20W23W24.md)
-3. [Foundations in Mathematics and Statistics (W23/24)](Foundations%20in%20Math%20and%20Stats%20W23W24.md)
-4. [Introduction to Focus Areas (W23/24)](Introduction%20to%20Focus%20Areas%20W23W24.md)
+1. [Foundations in Bio-Medicine (W23/24)](FBio-Med.md)
+2. [Foundations in Computer Science (W23/24)](FCS.md)
+3. [Foundations in Mathematics and Statistics (W23/24)](FMathStats.md)
+4. [Introduction to Focus Areas (W23/24)](FocusAreas.md)
 
 
 ## How to Use This Repository
