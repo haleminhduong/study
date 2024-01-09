@@ -25,8 +25,6 @@ If you'd like to contribute or improve the content of this repository, please fo
 
 1. Fork this repository to your GitHub account.
 2. Create a new branch for your changes.
-3. Make your updates or additions.
-4. Create a pull request explaining your changes.
 
 Your contributions are highly appreciated and will help fellow students in their Bioinformatics journey!
 
@@ -34,4 +32,4 @@ Your contributions are highly appreciated and will help fellow students in their
 
 If you have any questions, suggestions, or would like to collaborate on this repository, feel free to reach out to me via email at [haleminhduong@gmail.com](mailto:haleminhduong@gmail.com) or through GitHub.
 
-Happy studying, and best of luck with your Bioinformatics Master's Degree! 📚🔬💻📊
+Happy studying, and best of luck with Bioinformatics! 
