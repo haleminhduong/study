@@ -1,6 +1,9 @@
-# Study Repository for Bioinformatics Master's Degree
+# Study Repository for Bioinformatics Bachelor's and Master's Degree
 
 Welcome to my study repository for my Bioinformatics Master's Degree! In this repository, I will be organizing and maintaining all of my notes and resources related to the first semester of my program. The subjects I am currently studying include:
+
+- **Computerorientierte Mathematik II (S24)**
+- **Statistik fuer Biowissenschaftler II (S24)**
 
 - **Foundations in Bio-Medicine (W23/24)**
 - **Foundations in Computer Science (W23/24)**
@@ -8,7 +11,10 @@ Welcome to my study repository for my Bioinformatics Master's Degree! In this re
 - **Introduction to Focus Areas (W23/24)**
 
 ## Table of Contents
+Bachelor
+1. [Computerorientierte Mathematik II (S24)](CoMa2.md)
 
+Master
 1. [Foundations in Bio-Medicine (W23/24)](FBio-Med.md)
 2. [Foundations in Computer Science (W23/24)](FCS.md)
 3. [Foundations in Mathematics and Statistics (W23/24)](FMathStats.md)
