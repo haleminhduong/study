@@ -189,16 +189,19 @@ M = \begin{pmatrix}
 $$
 
 Zeile 1:
+
 $$
 |1| + |0| + |0| = 1
 $$
 
 Zeile 2:
+
 $$
 |1| + |1| + |1| = 3
 $$
 
 Zeile 3:
+
 $$
 |1| + |1 + \epsilon| + |{(1 + \epsilon)}^2| = 1 + 1 + \epsilon + 1 + 2\epsilon
 + \epsilon^2 = 3 + 3\epsilon + \epsilon^2
@@ -220,6 +223,7 @@ $$
 $$
 
 Zeile 1:
+
 $$
 |1| + |-\frac{1}{\epsilon}| + |\frac{1}{\epsilon(1+\epsilon)}| = 1 +
 \frac{1}{\epsilon} + \frac{1}{\epsilon(1+\epsilon)}
@@ -244,6 +248,7 @@ $$
 Zeile 1 < Zeile 2 wegen $0 <\frac{1}{1+\epsilon}$
 
 Zeile 3 < Zeile 2 wegen 
+
 $$
 \frac{1}{\epsilon} + \frac{1}{1+\epsilon} <
 \frac{1}{1+\epsilon} + \frac{1+\epsilon}{\epsilon}   
