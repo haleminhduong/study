@@ -203,8 +203,7 @@ $$
 Zeile 3:
 
 $$
-|1| + |1 + \epsilon| + |{(1 + \epsilon)}^2| = 1 + 1 + \epsilon + 1 + 2\epsilon
-+ \epsilon^2 = 3 + 3\epsilon + \epsilon^2
+|1| + |1 + \epsilon| + |{(1 + \epsilon)}^2| = 1 + 1 + \epsilon + 1 + 2\epsilon + \epsilon^2 = 3 + 3\epsilon + \epsilon^2
 $$
 
 da $\epsilon^2$ sehr klein ist, ist nur $3 + 3\epsilon$ verblieben
