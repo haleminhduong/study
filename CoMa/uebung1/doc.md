@@ -29,6 +29,13 @@ $$
 (c \cdot e \cdot g + a \cdot f \cdot h + b \cdot d \cdot i)
 $$
 
+### Lagrange-Polynomials 
+
+$$
+L_k(x) = \prod_{\substack{i=0 \\ i \neq k}}^n \frac{x - x_i}{x_k - x_i}
+$$
+
+
 ### Adjugate
 
 The adjugate of a matrix is the transpose of its cofactor matrix. The cofactor
@@ -53,13 +60,64 @@ $$f(0)=0$$
 $$f(1)=0$$
 $$f(1+ϵ)=1$$
 Wir möchten diese Funktion durch ein quadratisches Polynom $p(x)$ annähern, das
-diese drei Punkte genau trifft. Um das zu erreichen, verwenden wir die 
-Lagrange-Interpolation.
+diese drei Punkte genau trifft.
 
 ### a. Aufstellen von Matrix und Vektor
 
-Die Matrix $M$ und der Vektor $b$ für das Gleichungssystem $Ma=b$ ergeben sich 
-aus den Stützstellen und Funktionswerten:
+Das Gleichungssystem $Ma=b$ ergibt sich aus den Interpolationsbedingungen:
+
+$$
+p(x_1) = f(x_1)
+$$
+
+$$
+p(x_2) = f(x_2)
+$$
+
+$$
+p(x_3) = f(x_3)
+$$
+
+wobei $p(x)=a_2x^2+a_1x+a_0$ das Interpolationspolynom ist.
+
+Setzen wir die Stützstellen $x_1=0,x_2=1$ und $x_3=1+ϵ$ sowie die 
+Funktionswerte $f(x_1)=0,f(x_2)=0$ und $f(x_3)=1$ ein, erhalten wir das 
+folgende Gleichungssystem:
+
+$$
+a_0 = 0
+$$
+
+$$
+a_2 + a_1 + a_0 = 0
+$$
+
+$$
+(1 + \epsilon)^2 a_2 + (1 + \epsilon) a_1 + a_0 = 1
+$$
+
+Dieses Gleichungssystem können wir in Matrixform schreiben:
+
+$$
+\begin{pmatrix}
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+1 & 1 + \epsilon & (1 + \epsilon)^2
+\end{pmatrix}
+\begin{pmatrix}
+a_0 \\
+a_1 \\
+a_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\
+0 \\
+1
+\end{pmatrix}
+$$
+
+Daher sind die Matrix $M$ und der Vektor $b$ in Abhängigkeit von ϵ:
 
 $$
 M = \begin{pmatrix}
@@ -76,92 +134,149 @@ $$
 
 ### b. Berechnung des Koeffizientenvektors
 
-Um den Koeffizientenvektor $a$ zu finden, müssen wir das Gleichungssystem
-$Ma=b$ lösen. Das können wir machen, indem wir die Inverse von M berechnen
-und mit b multiplizieren:
+Die Lagrange-Basispolynome für die Stützstellen $x_1=0,x_2=1$ und $x_3=1+ϵ$ 
+sind:
+
 
 $$
-a = M^{-1} b
-$$
-
-Die Inverse von M lässt sich mit der Formel 
-
-$$
-M^{−1} = \frac{1}{det(M)}adj(M) 
-$$
-
-berechnen. 
-
-$$
-\det(M) = 1 \cdot \begin{vmatrix} 1 & 1 \\ 1+\epsilon & (1+\epsilon)^2
-\end{vmatrix} - 0 + 0 = (1+\epsilon)^2 - (1+\epsilon) = \epsilon(1+\epsilon)
-$$
-
-Als nächstes berechnen wir die Adjunkte von M. Dazu bestimmen wir die 
-Kofaktorenmatrix und transponieren diese:
-
-$$
-\text{cof}(M) = \begin{pmatrix}
-(1+\epsilon)^2 - (1+\epsilon) & -(1+\epsilon) + 1 & 1 - 1 \\
--(1+\epsilon) & (1+\epsilon)^2 & -1 \\
-1 & -1 & \epsilon
-\end{pmatrix} = \begin{pmatrix}
-\epsilon(1+\epsilon) & -\epsilon & 0 \\
--(1+\epsilon) & (1+\epsilon)^2 & -1 \\
-1 & -1 & \epsilon
-\end{pmatrix}
+L_1(x) = \frac{(x - 1)(x - (1 + \epsilon))}{(0 - 1)(0 - (1 + \epsilon))}
+= \frac{x^2 - (2 + \epsilon)x + (1 + \epsilon)}{1 + \epsilon}
 $$
 
 $$
-M^{-1} = \frac{1}{\det(M)} \text{adj}(M) = \frac{1}{\epsilon(1+\epsilon)} \begin{pmatrix}
-\epsilon(1+\epsilon) & -(1+\epsilon) & 1 \\
--\epsilon & (1+\epsilon)^2 & -1 \\
-0 & -1 & \epsilon
-\end{pmatrix} = 
-\begin{pmatrix}
-1 & -\frac{1}{\epsilon} & \frac{1}{\epsilon(1+\epsilon)} \\
--\frac{1}{1+\epsilon} & \frac{1+\epsilon}{\epsilon} & -\frac{1}{\epsilon(1+\epsilon)} \\
-0 & -\frac{1}{\epsilon} & \frac{1}{1+\epsilon}
-\end{pmatrix}
+L_2(x) = \frac{(x - 0)(x - (1 + \epsilon))}{(1 - 0)(1 - (1 + \epsilon))} 
+= \frac{x^2 - (1 + \epsilon)x}{-\epsilon}
 $$
 
 $$
-a = M^{-1} b = \begin{pmatrix}
-1 & -\frac{1}{\epsilon} & \frac{1}{\epsilon(1+\epsilon)} \\
--\frac{1}{1+\epsilon} & \frac{1+\epsilon}{\epsilon} & -\frac{1}{\epsilon(1+\epsilon)} \\
-0 & -\frac{1}{\epsilon} & \frac{1}{1+\epsilon}
-\end{pmatrix} \begin{pmatrix}
-0 \\
-0 \\
-1
-\end{pmatrix} = \begin{pmatrix}
-0 \\
--\frac{1}{\epsilon} \\
-\frac{1}{\epsilon}
-\end{pmatrix}
+L_3(x) = \frac{(x - 0)(x - 1)}{((1 + \epsilon) - 0)((1 + \epsilon) - 1)} 
+= \frac{x^2 - x}{\epsilon(1 + \epsilon)}  
 $$
+
+Das Lagrange-Interpolationspolynom ist dann:
+
+$$
+p(x) = f(x_1)L_1(x) + f(x_2)L_2(x) + f(x_3)L_3(x)
+$$
+
+
+Mit den gegebenen Funktionswerten $f(x_1)=0,f(x_2)=0$ und $f(x_3)=1$ ergibt
+sich:
+
+$$
+p(x) = 0 \cdot L_1(x) + 0 \cdot L_2(x) + 1 \cdot L_3(x) =
+\frac{x^2 - x}{\epsilon(1 + \epsilon)}
+$$
+
+**Koeffizientenvektor a:**
+
+Um das Polynom in der Form $p(x)=a_2x^2+a_1x+a_0$ darzustellen, 
+müssen wir den Ausdruck für $p(x)$ ausmultiplizieren:
+
+$$
+p(x) = \frac{1}{\epsilon(1 + \epsilon)}x^2 - \frac{1}{\epsilon(1 + \epsilon)}x + 0
+$$
+
+
+> **Mittels inverse Matrix** *falsche Lösung*
+> $$
+> a = M^{-1} b
+> $$
+> 
+> Die Inverse von M lässt sich mit der Formel 
+> 
+> $$
+> M^{−1} = \frac{1}{det(M)}adj(M) 
+> $$
+> 
+> berechnen. 
+> 
+> $$
+> \det(M) = 1 \cdot \begin{vmatrix} 1 & 1 \\ 1+\epsilon & (1+\epsilon)^2
+> \end{vmatrix} - 0 + 0 = (1+\epsilon)^2 - (1+\epsilon) = \epsilon(1+\epsilon)
+> $$
+> 
+> Als nächstes berechnen wir die Adjunkte von M. Dazu bestimmen wir die 
+> Kofaktorenmatrix und transponieren diese:
+> 
+> $$
+> \text{cof}(M) = \begin{pmatrix}
+> (1+\epsilon)^2 - (1+\epsilon) & -(1+\epsilon)^2 + 1 & 1 + \epsilon - 1 \\
+> -(1+\epsilon) & (1+\epsilon)^2 & -1 \\
+> 1 & -1 & \epsilon
+> \end{pmatrix} = \begin{pmatrix}
+> \epsilon(1+\epsilon) & -\epsilon & 0 \\
+> -(1+\epsilon) & (1+\epsilon)^2 & -1 \\
+> 1 & -1 & \epsilon
+> \end{pmatrix}
+> $$
+> 
+> $$
+> M^{-1} = \frac{1}{\det(M)} \text{adj}(M) = \frac{1}{\epsilon(1+\epsilon)} \begin{pmatrix}
+> \epsilon(1+\epsilon) & -(1+\epsilon) & 1 \\
+> -\epsilon & (1+\epsilon)^2 & -1 \\
+> 0 & -1 & \epsilon
+> \end{pmatrix} = 
+> \begin{pmatrix}
+> 1 & -\frac{1}{\epsilon} & \frac{1}{\epsilon(1+\epsilon)} \\
+> -\frac{1}{1+\epsilon} & \frac{1+\epsilon}{\epsilon} & -\frac{1}{\epsilon(1+\epsilon)} \\
+> 0 & -\frac{1}{\epsilon} & \frac{1}{1+\epsilon}
+> \end{pmatrix}
+> $$
+> 
+> $$
+> a = M^{-1} b = \begin{pmatrix}
+> 1 & -\frac{1}{\epsilon} & \frac{1}{\epsilon(1+\epsilon)} \\
+> -\frac{1}{1+\epsilon} & \frac{1+\epsilon}{\epsilon} & -\frac{1}{\epsilon(1+\epsilon)} \\
+> 0 & -\frac{1}{\epsilon} & \frac{1}{1+\epsilon}
+> \end{pmatrix} \begin{pmatrix}
+> 0 \\
+> 0 \\
+> 1
+> \end{pmatrix} = \begin{pmatrix}
+> 0 \\
+> -\frac{1}{\epsilon} \\
+> \frac{1}{\epsilon}
+> \end{pmatrix}
+> $$
+> 
+> $$
+> a = \begin{pmatrix}
+> 0 \\
+> -\frac{1}{\epsilon} \\
+> \frac{1}{\epsilon}
+> \end{pmatrix}
+> $$
+
+Daher ist der Koeffizientenvektor:
 
 $$
 a = \begin{pmatrix}
+a_0 \\
+a_1 \\
+a_2
+\end{pmatrix} = \begin{pmatrix}
 0 \\
--\frac{1}{\epsilon} \\
-\frac{1}{\epsilon}
+-\frac{1}{\epsilon(1 + \epsilon)} \\
+\frac{1}{\epsilon(1 + \epsilon)}
 \end{pmatrix}
 $$
 
+Dies ist das gleiche Ergebnis wie bei der direkten Lösung des 
+Gleichungssystems $Ma=b$.
 ### c. Auswerten des Polynoms
 Das Interpolationspolynom ist also:
 
 $$
-p(x) = -\frac{1}{\epsilon} x + \frac{1}{\epsilon} x^2
+p(x) = -\frac{1}{\epsilon(1 + \epsilon)} x + \frac{1}{\epsilon(1 + \epsilon)} x^2
 $$
 
 Um $f(x)$ an der Stelle $x=\frac{1}{2}$ zu approximieren, setzen wir diesen Wert
 in das Polynom ein:
 
 $$
-p\left(\frac{1}{2}\right) = -\frac{1}{2\epsilon} + \frac{1}{4\epsilon} =
--\frac{1}{4\epsilon}
+p\left(\frac{1}{2}\right) = -\frac{1}{2\epsilon(1 + \epsilon)} + \frac{1}{4\epsilon(1 + \epsilon)} =
+-\frac{1}{4\epsilon(1+\epsilon)}
 $$
 
 ### d. Konditionszahl der Matrix
@@ -189,21 +304,19 @@ M = \begin{pmatrix}
 $$
 
 Zeile 1:
-
 $$
 |1| + |0| + |0| = 1
 $$
 
 Zeile 2:
-
 $$
 |1| + |1| + |1| = 3
 $$
 
 Zeile 3:
-
 $$
-|1| + |1 + \epsilon| + |{(1 + \epsilon)}^2| = 1 + 1 + \epsilon + 1 + 2\epsilon + \epsilon^2 = 3 + 3\epsilon + \epsilon^2
+|1| + |1 + \epsilon| + |{(1 + \epsilon)}^2| = 1 + 1 + \epsilon + 1 + 2\epsilon
++ \epsilon^2 = 3 + 3\epsilon + \epsilon^2
 $$
 
 da $\epsilon^2$ sehr klein ist, ist nur $3 + 3\epsilon$ verblieben
@@ -222,7 +335,6 @@ $$
 $$
 
 Zeile 1:
-
 $$
 |1| + |-\frac{1}{\epsilon}| + |\frac{1}{\epsilon(1+\epsilon)}| = 1 +
 \frac{1}{\epsilon} + \frac{1}{\epsilon(1+\epsilon)}
@@ -247,7 +359,6 @@ $$
 Zeile 1 < Zeile 2 wegen $0 <\frac{1}{1+\epsilon}$
 
 Zeile 3 < Zeile 2 wegen 
-
 $$
 \frac{1}{\epsilon} + \frac{1}{1+\epsilon} <
 \frac{1}{1+\epsilon} + \frac{1+\epsilon}{\epsilon}   
@@ -379,12 +490,12 @@ $$
 \det(M) \neq 0
 $$
 
-Schlussfolgerung:
+**Schlussfolgerung:**
 
 Da die Determinante der Vandermonde-Matrix $M$ ungleich Null ist, 
 ist $M$ regulär (invertierbar).
 
-Intuitive Erklärung:
+**Intuitive Erklärung:**
 
 Die Vandermonde-Matrix repräsentiert ein lineares Gleichungssystem,
 das entsteht, wenn man ein Polynom vom Grad höchstens $n−1$ an $n$
