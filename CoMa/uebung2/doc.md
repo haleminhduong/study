@@ -55,8 +55,8 @@ $\pi$       | 0         | $-2/\pi$           | $-8/(3\pi^2)$                    
 Das Interpolationspolynom in Newton-Darstellung lautet:
 
 $$
-p(x) = 0 - \frac{2}{\pi}(x + \pi) + \frac{8}{3\pi^2}(x + \pi)(x + \pi/2) 
-- \frac{8}{3\pi^3}(x + \pi)(x + \pi/2)(x - \pi/2)
+p(x)=0-\frac{2}{\pi}(x+\pi)+\frac{8}{3\pi^2}(x+\pi)(x+\pi/2) 
+-\frac{8}{3\pi^3}(x+\pi)(x+\pi/2)(x-\pi/2)
 $$
 
 ### b. Auswertung mit Horner-Schema
@@ -266,7 +266,7 @@ $$
 
 $$
 p_L(x) = \frac{1}{\epsilon(1+\epsilon)}x^2 - \frac{1}{\epsilon(1+\epsilon)}x 
-+ 0
++0
 $$
 
 ### Newton-Interpolation
