@@ -123,7 +123,7 @@ $$
 Sei $f:[a,b]→R$ eine unendlich oft differenzierbare Funktion, deren Ableitungen
 $f^{(n)}$ alle gleichmäßig in $n$ beschränkt sind. Wenn die Intervalllänge $b−a≤1$
 ist, dann konvergiert der Interpolationsfehler für jede Wahl von Stützstellen
-$a=x_0<\ldots<x_n=b$ gegen Null, wenn die Anzahl der Stützstellen gegen unendlich 
+$a=x_0 < \ldots < x_n=b$ gegen Null, wenn die Anzahl der Stützstellen gegen unendlich 
 geht.
 
 **Erklärung (in einfachen Worten):**
