@@ -275,3 +275,23 @@ $$
 f[x_i,\ldots,x_k] = \frac{f[x_{i+1},\ldots,x_k]-f[x_i,\ldots,x_{k-1}]}
 {x_k - x_i} 
 $$
+
+
+$x_i$ | $f[x_i]$ | $f[x_i, x_{i+i}]$| $f[x_i, \ldots, x_{i+2}$
+------|----------|------------------|-------------------------
+0| 0
+1| 0 | 0
+$1+\epsilon$| 1 | $\frac{1}{\epsilon}$ | $\frac{1}{\epsilon(1+\epsilon)}$
+
+Das entsprechende Polynom hat die Form:
+
+$$
+p(x) = 0 + 0\cdot x + \frac{1}{\epsilon(1+\epsilon)}\cdot x(x-1) =
+\frac{1}{\epsilon(1+\epsilon)}x^2 - \frac{1}{\epsilon(1+\epsilon)}x  
+$$
+
+$$
+p_N(x) = \frac{1}{\epsilon(1+\epsilon)}x^2 - \frac{1}{\epsilon(1+\epsilon)}x 
++0
+$$
+
