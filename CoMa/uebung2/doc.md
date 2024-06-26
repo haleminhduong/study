@@ -123,7 +123,7 @@ $$
 Sei $f:[a,b]→R$ eine unendlich oft differenzierbare Funktion, deren Ableitungen
 $f^{(n)}$ alle gleichmäßig in $n$ beschränkt sind. Wenn die Intervalllänge $b−a≤1$
 ist, dann konvergiert der Interpolationsfehler für jede Wahl von Stützstellen
-$a=x_0 < \ldots < x_n=b$ gegen Null, wenn die Anzahl der Stützstellen gegen unendlich 
+$a=x_0<\ldots<x_n=b$ gegen Null, wenn die Anzahl der Stützstellen gegen unendlich 
 geht.
 
 **Erklärung (in einfachen Worten):**
@@ -216,4 +216,62 @@ Fakultät schneller wächst als jede Exponentialfunktion.
 Daher konvergiert der Interpolationsfehler gegen Null, wenn die Anzahl der 
 Stützstellen gegen unendlich geht.
 
+# Aufgabe 3
 
+## Problemstellung
+Wir haben eine Funktion f(x), von der wir nur drei Werte kennen:
+
+$$
+f(0)=0
+$$
+
+$$
+f(1)=0
+$$
+
+$$
+f(1+ϵ)=1
+$$
+
+Wir möchten diese Funktion durch ein quadratisches Polynom approximieren,
+das diese drei Punkte genau trifft. Um das zu erreichen, verwenden wir 
+zwei Methoden: die Lagrange-Interpolation und die Newton-Interpolation.
+
+### Lagrange-Interpolation
+
+$$
+L_1(x) = \frac{(x - 1)(x - (1 + \epsilon))}{(0 - 1)(0 - (1 + \epsilon))} =
+\frac{x^2 - (2 + \epsilon)x + (1 + \epsilon)}{1 + \epsilon}
+$$
+
+$$
+L_2(x) = \frac{(x - 0)(x - (1 + \epsilon))}{(1 - 0)(1 - (1 + \epsilon))} =
+\frac{x^2 - (1 + \epsilon)x}{-\epsilon}
+$$
+
+$$
+L_3(x) = \frac{(x - 0)(x - 1)}{((1 + \epsilon) - 0)((1 + \epsilon) - 1)} =
+\frac{x^2 - x}{\epsilon(1 + \epsilon)}
+$$
+
+Das entsprechende Polynom hat die Form:
+
+$$
+p(x) =f(x_1)L_1(x) + f(x_2)L_2(x) + f(x_3)L_3(x) = \\
+0 \cdot\frac{x^2 - x}{\epsilon(1 + \epsilon)} + 
+0 \cdot\frac{x^2 - (1 + \epsilon)x}{-\epsilon} + 
+1\cdot\frac{x^2 - x}{\epsilon(1 + \epsilon)} = \\
+\frac{x^2 - x}{\epsilon(1 + \epsilon)}
+$$
+
+$$
+p_L(x) = \frac{1}{\epsilon(1+\epsilon)}x^2 - \frac{1}{\epsilon(1+\epsilon)}x 
++ 0
+$$
+
+### Newton-Interpolation
+
+$$
+f[x_i,\ldots,x_k] = \frac{f[x_{i+1},\ldots,x_k]-f[x_i,\ldots,x_{k-1}]}
+{x_k - x_i} 
+$$
