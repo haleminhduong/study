@@ -13,6 +13,7 @@ g & h & i
 $$
 
 Downward diagonals
+
 $$
 a \cdot e \cdot i + b \cdot f \cdot g + c \cdot d \cdot h
 $$
@@ -109,8 +110,7 @@ a_0 \\
 a_1 \\
 a_2
 \end{pmatrix}
-=
-\begin{pmatrix}
+=\begin{pmatrix}
 0 \\
 0 \\
 1
@@ -286,7 +286,7 @@ kleine Änderungen in den Eingabedaten reagiert. Wir berechnen sie mithilfe der
 Maximumsnorm:
 
 $$
-\kappa_\infty(M) = \|M\|_\infty \|M^{-1}\|_\infty
+\kappa_\infty(M) = \|M\|\_\infty \|M^{-1}\|\_\infty
 $$
 
 $$
@@ -304,29 +304,32 @@ M = \begin{pmatrix}
 $$
 
 Zeile 1:
+
 $$
-|1| + |0| + |0| = 1
+\|1\|+ \|0\| + \|0\| = 1
 $$
 
 Zeile 2:
+
 $$
-|1| + |1| + |1| = 3
+\|1\| + \|1\| + \|1\| = 3
 $$
 
 Zeile 3:
+
 $$
-|1| + |1 + \epsilon| + |{(1 + \epsilon)}^2| = 1 + 1 + \epsilon + 1 + 2\epsilon
-+ \epsilon^2 = 3 + 3\epsilon + \epsilon^2
+\|1\| + \|1 + \epsilon\| + \|{(1 + \epsilon)}^2\| = 1 + 1 + \epsilon + 1 + 2\epsilon
++\epsilon^2 = 3 + 3\epsilon + \epsilon^2
 $$
 
 da $\epsilon^2$ sehr klein ist, ist nur $3 + 3\epsilon$ verblieben
 
 $$
-\|M\|_\infty = \max \{1, 3, 3+3\epsilon\} = 3+3\epsilon
+\|M\|\_\infty = \max \{ 1, 3, 3+3\epsilon \} = 3+3\epsilon
 $$
 
 $$
-|M^{-1}| =
+\|M^{-1}\| =
 \begin{pmatrix}
 1 & -\frac{1}{\epsilon} & \frac{1}{\epsilon(1+\epsilon)} \\
 -\frac{1}{1+\epsilon} & \frac{1+\epsilon}{\epsilon} & -\frac{1}{\epsilon(1+\epsilon)} \\
@@ -335,16 +338,17 @@ $$
 $$
 
 Zeile 1:
+
 $$
-|1| + |-\frac{1}{\epsilon}| + |\frac{1}{\epsilon(1+\epsilon)}| = 1 +
+\|1\| + \|-\frac{1}{\epsilon}\| + \|\frac{1}{\epsilon(1+\epsilon)}\| = 1 +
 \frac{1}{\epsilon} + \frac{1}{\epsilon(1+\epsilon)}
 $$
 
 Zeile 2:
 
 $$
-|-\frac{1}{1+\epsilon}| + |\frac{1+\epsilon}{\epsilon}| + 
-|-\frac{1}{\epsilon(1+\epsilon)}| =
+\|-\frac{1}{1+\epsilon}\| + \|\frac{1+\epsilon}{\epsilon}\| + 
+\|-\frac{1}{\epsilon(1+\epsilon)}\| =
 \frac{1}{1+\epsilon} + \frac{1+\epsilon}{\epsilon} + 
 \frac{1}{\epsilon(1+\epsilon)}
 $$
@@ -352,20 +356,21 @@ $$
 Zeile 3:
 
 $$
-0 + |-\frac{1}{\epsilon}| + |\frac{1}{1+\epsilon}| =
+0 + \|-\frac{1}{\epsilon}\| + \|\frac{1}{1+\epsilon}\| =
 \frac{1}{\epsilon} + \frac{1}{1+\epsilon} 
 $$
 
 Zeile 1 < Zeile 2 wegen $0 <\frac{1}{1+\epsilon}$
 
 Zeile 3 < Zeile 2 wegen 
+
 $$
 \frac{1}{\epsilon} + \frac{1}{1+\epsilon} <
 \frac{1}{1+\epsilon} + \frac{1+\epsilon}{\epsilon}   
 $$
 
 $$
-\|M^{-1}\|_\infty = 
+\|M^{-1}\|\_\infty = 
 \frac{1}{1+\epsilon} + \frac{1+\epsilon}{\epsilon} + 
 \frac{1}{\epsilon(1+\epsilon)} =
 \frac{\epsilon + (1+\epsilon)^2 + 1}{\epsilon(1+\epsilon)} = 
@@ -375,13 +380,13 @@ $$
 $$
 
 $$
-\kappa_\infty(M) = \frac{(2+\epsilon)(3+3\epsilon)}{\epsilon}
+\kappa\_\infty(M) = \frac{(2+\epsilon)(3+3\epsilon)}{\epsilon}
 $$
 
 Um die Konditionszahl $(\kappa_\infty(M))$ zu berechnen, substituieren wir die gegebene Formel und vereinfachen sie:
 
 $$
-\kappa_\infty(M) = \frac{(2+\epsilon)(3+3\epsilon)}{\epsilon}
+\kappa\_\infty(M) = \frac{(2+\epsilon)(3+3\epsilon)}{\epsilon}
 $$
 
 Wir multiplizieren die Terme im Zähler:
@@ -405,19 +410,19 @@ $$
 Teilen wir jeden Term im Zähler durch (\epsilon):
 
 $$
-\kappa_\infty(M) = \frac{6}{\epsilon} + \frac{9\epsilon}{\epsilon} + \frac{3\epsilon^2}{\epsilon} = \frac{6}{\epsilon} + 9 + 3\epsilon
+\kappa\_\infty(M) = \frac{6}{\epsilon} + \frac{9\epsilon}{\epsilon} + \frac{3\epsilon^2}{\epsilon} = \frac{6}{\epsilon} + 9 + 3\epsilon
 $$
 
 Somit ist die Konditionszahl:
 
 $$
-\kappa_\infty(M) = \frac{6}{\epsilon} + 9 + 3\epsilon
+\kappa\_\infty(M) = \frac{6}{\epsilon} + 9 + 3\epsilon
 $$
 
 Die Konditionszahl $(\kappa_\infty(M))$ ist ein Maß für die Sensitivität der Lösung eines linearen Systems gegenüber Änderungen oder Störungen in den Eingangsdaten oder im System selbst. Im Kontext der Berechnung dieser spezifischen Konditionszahl:
 
 $$
-\kappa_\infty(M) = \frac{6}{\epsilon} + 9 + 3\epsilon
+\kappa\_\infty(M) = \frac{6}{\epsilon} + 9 + 3\epsilon
 $$
 
 und im Grenzfall $(\epsilon\to0):$
