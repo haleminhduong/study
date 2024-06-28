@@ -69,26 +69,28 @@ Für unser Polynom $p(x)$ und den Wert $x=3\pi/2$ gehen wir wie folgt vor:
 - Initialisierung: 
   - Setze $b_3=a_3=-\frac{8}{3\pi^3}$.
 - Iteration: 
-  - Für $k=2,1,0$ berechne $b_k=a_k+x*b_{k+1}$ .
+  - Für $k=2,1,0$ berechne $b_k=a_k+(x-x_k)b_{k+1}$ .
 - Ergebnis: 
   - Der Wert $b_0$ ist das Ergebnis der Auswertung.
 
 $$
-b_2 = \frac{8}{3\pi^2} + \frac{3\pi}{2} (-\frac{8}{3\pi^3}) =
-\frac{8}{3\pi^2} - \frac{12}{3\pi^2} = -\frac{4}{3\pi^2} 
+b_2 = \frac{8}{3\pi^2} + (\frac{3\pi}{2}-\frac{\pi}{2}) (-\frac{8}{3\pi^3}) =
+\frac{8}{3\pi^2} - \frac{8}{3\pi^2} = 0 
 $$
 
 $$
-b_1 = -\frac{2}{\pi} + \frac{3\pi}{2} (-\frac{4}{3\pi^2}) =
--\frac{2}{\pi} - \frac{2}{\pi} = -\frac{4}{\pi} 
+b_1 = -\frac{2}{\pi} + (\frac{3\pi}{2}-(-\frac{\pi}{2})) \cdot 0 =
+-\frac{2}{\pi} 
 $$
 
 
 $$
-b_0 = \frac{3\pi}{2} (-\frac{4}{\pi}) = -6
+b_0 = (\frac{3\pi}{2}-(-\pi)) (-\frac{2}{\pi})=\\
+\frac{5\pi}{2}(-\frac{2}{\pi})= -5
 $$
 
-Daher ist $p(\frac{3\pi}{2})=-6$ .
+Daher ist $p(\frac{3\pi}{2})=-5$ .
+
 
 ### c. Berechnung der dividierten Differenz
 
