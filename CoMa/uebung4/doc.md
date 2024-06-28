@@ -33,29 +33,29 @@ definiert ist, ist $z(t) = y(t + \alpha)$ auf dem Intervall $(a
 
 2.  **Ableitung von $z(t)$ :** Die Ableitung von $z(t)$ nach der Kettenregel ist:
 
-    $$
-    z'(t) = y'(t + \alpha) \cdot 1 = y'(t + \alpha) 
-    $$
+$$
+z'(t) = y'(t + \alpha) \cdot 1 = y'(t + \alpha) 
+$$
 
 3.  **Einsetzen in die Differentialgleichung:** Setzen wir $z(t)$ 
 und $z'(t)$ in die Differentialgleichung ein:
 
-    $$
-    z'(t) = f(z(t)) \\
-    y'(t + \alpha) = f(y(t + \alpha)) 
-    $$
+$$
+z'(t) = f(z(t)) \\
+y'(t + \alpha) = f(y(t + \alpha)) 
+$$
 
-    Da $y(t)$ eine Lösung der Differentialgleichung ist, gilt 
-    $y'(t) = f(y(t))$ für alle $t \in (a, b)$. Da $t + \alpha$ im 
-    Intervall $(a, b)$ liegt, wenn $t$ im Intervall $(a - \alpha, 
-    b - \alpha)$ liegt, gilt auch:
+Da $y(t)$ eine Lösung der Differentialgleichung ist, gilt 
+$y'(t) = f(y(t))$ für alle $t \in (a, b)$. Da $t + \alpha$ im 
+Intervall $(a, b)$ liegt, wenn $t$ im Intervall $(a - \alpha, 
+b - \alpha)$ liegt, gilt auch:
 
-    $$
-    y'(t + \alpha) = f(y(t + \alpha))
-    $$
+$$
+y'(t + \alpha) = f(y(t + \alpha))
+$$
 
 
-    Dies zeigt, dass $z(t)$ die Differentialgleichung erfüllt.
+Dies zeigt, dass $z(t)$ die Differentialgleichung erfüllt.
 
 **Schlussfolgerung:**
 
@@ -87,27 +87,26 @@ $$
 
 1.  **Ableitung:** Berechnen wir die Ableitung von $y(t)$:
 
-    $$
-    y'(t) = \frac{-2t}{(1 + t^2)^2}
-    $$
+$$
+y'(t) = \frac{-2t}{(1 + t^2)^2}
+$$
 
 2.  **Einsetzen in die Differentialgleichung:** Setzen wir $y(t)$ und $y'(t)$ in die Differentialgleichung ein:
 
-    $$
-    \frac{-2t}{(1 + t^2)^2} = -2t \left(\frac{1}{1 + t^2}\right)^2
-    $$
+$$
+\frac{-2t}{(1 + t^2)^2} = -2t \left(\frac{1}{1 + t^2}\right)^2
+$$
 
 
-    Die Gleichung ist erfüllt.
+Die Gleichung ist erfüllt.
 
 3.  **Anfangsbedingung:** Überprüfen wir die Anfangsbedingung:
 
-    $$
-    y(0) = \frac{1}{1 + 0^2} = 1 = y_0
-    $$
+$$
+y(0) = \frac{1}{1 + 0^2} = 1 = y_0
+$$
 
-
-    Die Anfangsbedingung ist erfüllt.
+Die Anfangsbedingung ist erfüllt.
 
 **Fazit:**
 
@@ -117,28 +116,28 @@ für $F(t, x) = -2tx^2$ und $y_0 = 1$.
 ### b. Nachweis für $y(t) = e^{-2t} + 1$:
 
 1.  **Ableitung:** Berechnen wir die Ableitung von y(t):
-    $$
-    y'(t) = -2e^(-2t)
-    $$
+$$
+y'(t) = -2e^(-2t)
+$$
 
 2.  **Einsetzen in die Differentialgleichung:** Setzen wir $y(t)$ und $y'(t)$
 in die Differentialgleichung ein:
 
-    $$
-    -2e^{-2t} \quad = 2 - 2(e^{-2t} + 1)\\
-    \quad = \quad 2 - 2e^{-2t} + 2\\
-    \quad = \quad  -2e^{-2t}\\
-    $$
+$$
+-2e^{-2t} \quad = 2 - 2(e^{-2t} + 1)\\
+\quad = \quad 2 - 2e^{-2t} + 2\\
+\quad = \quad  -2e^{-2t}\\
+$$
 
-    Die Gleichung ist erfüllt.
+Die Gleichung ist erfüllt.
 
 3.  **Anfangsbedingung:** Überprüfen wir die Anfangsbedingung:
 
-    $$
-    y(0) = e^{-2\cdot0} + 1 = 1 + 1 = 2 = y_0
-    $$
+$$
+y(0) = e^{-2\cdot0} + 1 = 1 + 1 = 2 = y_0
+$$
 
-    Die Anfangsbedingung ist erfüllt.
+Die Anfangsbedingung ist erfüllt.
 
 **Fazit:**
 
@@ -164,38 +163,38 @@ Differentialgleichung finden.
 
 1.  **Ableitung von y(t):**
 
-    $$
-    y'(t) = α'(t)e^{λt} + αλ(t)e^{λt}
-    $$
+$$
+y'(t) = α'(t)e^{λt} + αλ(t)e^{λt}
+$$
 
 2.  **Einsetzen in die Differentialgleichung:**
 
-    $$
-    α'(t)e^{λt} + αλ(t)e^{λt} = λ(α(t)e^{λt}) + f(t)
-    $$
+$$
+α'(t)e^{λt} + αλ(t)e^{λt} = λ(α(t)e^{λt}) + f(t)
+$$
 
 3.  **Vereinfachen:**
 
-    $$
-    α'(t)e^{λt} = f(t)
-    $$
+$$
+α'(t)e^{λt} = f(t)
+$$
 
 4.  **Lösung für $α'(t)$:**
 
-    $$
-    α'(t) = f(t)e^{-λt}
-    $$
+$$
+α'(t) = f(t)e^{-λt}
+$$
 
 5.  **Integration:**
 
     Nach dem Hauptsatz der Differential- und Integralrechnung können 
     wir $\alpha(t)$ durch Integration finden:
 
-    $$
-    α(t) = \int f(t)e^{-λt} dt + C
-    $$
+$$
+α(t) = \int f(t)e^{-λt} dt + C
+$$
 
-    wobei $C$ eine Integrationskonstante ist.
+wobei $C$ eine Integrationskonstante ist.
 
 **Allgemeine Lösung:**
 
