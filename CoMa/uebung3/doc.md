@@ -123,10 +123,23 @@ $$
 h(x) = x
 $$
 
+Eine $max\{0, x\}$ liefert $x$ bei $x\geq0$ und $0$ bei $x<0$
+
+Eine $max\{0,-x\}$ liefert $x$ bei $x<0$ und $0$ bei $x \geq 0$. Um 
+$-x$ zu bekommen verwenden wir $-max\{0,-x\}$.
+
+Mit
+
+$$
+h(x) = max\{0,x\} - max\{0,-x\}
+$$
+
+entspricht $h(x)$ der $id(x)$.
+
 Um dies zu erreichen, können wir die folgenden Gewichte und Biases wählen:
 
 $$
-W_1 = 1
+W_1 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}
 $$
 
 $$
@@ -134,40 +147,32 @@ b_1 = 0
 $$
 
 $$
-W_2 = 1
+W_2 = \begin{pmatrix} 1 & -1 \end{pmatrix}
 $$
 
 $$
 b_2 = 0
 $$
 
-**Rechenweg:**
-
 Setzen wir diese Werte in die Netzwerkgleichung ein, erhalten wir:
 
 $$
-h(x) = 1 \cdot σ(1 \cdot x + 0) + 0
-=σ(x)
-=max(0, x)
+h(x) =\begin{pmatrix} 1 & -1 \end{pmatrix}\sigma
+(\begin{pmatrix} 1 \\ -1 \end{pmatrix}x + 0) + 0=\\ 
+\begin{pmatrix} 1 & -1 \end{pmatrix}
+\sigma(\begin{pmatrix} x \\ -x \end{pmatrix})=\\
+\begin{pmatrix} 1 & -1 \end{pmatrix}
+(\begin{pmatrix} max\{0,x\} \\ max\{0,-x\} \end{pmatrix})=\\
+ max\{0,x\} - max\{0,-x\}
 $$
 
 Da wir die Ausgangsaktivierungsfunktion $\rho = id$ gewählt haben, gilt:
 
 $$
-h(x) = \rho(max(0, x)) = max(0, x)
+h(x) = id(x) =  x
 $$
 
 
-
-Für alle $x \in \mathbb{R}$ gilt:
-
-*   Wenn $x < 0$, dann ist $h(x) = \max(0, x) = 0$.
-*   Wenn $x \geq 0$, dann ist $h(x) = \max(0, x) = x$.
-
-Da die ReLU-Funktion negative Werte auf 0 setzt, ist die Ausgabe des 
-Netzwerks nicht für alle $x \in \mathbb{R}$ gleich $x$. Um die 
-Identitätsfunktion perfekt abzubilden, benötigen wir eine 
-Aktivierungsfunktion, die auch negative Werte unverändert lässt.
 
 # Aufgabe 2
 
