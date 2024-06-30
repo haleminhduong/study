@@ -117,3 +117,87 @@ $$
 \|x_{\Delta}(t_{k+1}) - \tilde{x}_{\Delta}(t_{k+1})\|_\infty =
 |x_0 - \tilde{x}_k|
 $$
+
+# Aufgabe 2
+
+## Problemstellung
+Wir betrachten die Differentialgleichung:
+
+$$
+x'(t) = λx(t)
+$$
+
+mit $\lambda < 0$. Wir wenden das explizite Euler-Verfahren mit 
+Schrittweite $\tau$ an, wobei $0 < \tau$. 
+Seien $x_\Delta$ und $\tilde{x}_{\Delta}$ die Näherungslösungen nach 
+$n$ Schritten des Euler-Verfahrens mit Anfangswerten $x_0$ bzw. 
+$\tilde{x}_{0}$. Wir wollen zeigen, dass:
+
+$$
+\|x_\Delta - \tilde{x}_{\Delta}\|_\infty = |x_0 - \tilde{x}_{0}|
+$$
+
+## Lösung
+
+
+**Beweis**:
+
+Induktionsanfang:
+
+$$
+x_{\Delta}(0) = x_0
+$$
+
+$$
+\tilde{x}_{\Delta}(0) = \tilde{x}_0
+$$
+
+$$
+\|x_{\Delta}(0)-\tilde{x}_{\Delta}(0)\|_\infty = |x_0 - \tilde{x}_0|
+$$
+
+Induktionsschritt:
+
+$$
+x_{\Delta}(t_{k+1}) = x_{\Delta}(t_k)+\tau(\lambda x_k)
+$$
+
+$$
+\tilde{x}_{\Delta}(t_{k+1}) = \tilde{x}_{\Delta}(t_k)+\tau(\lambda\tilde{x}_k)
+$$
+
+$$
+x_{\Delta}(t_{k+1})  - \tilde{x}_{\Delta}(t_{k+1}) =\\
+x_{\Delta}(t_k)+\tau(\lambda x_k) - (\tilde{x}_{\Delta}(t_k)+\tau(\lambda
+\tilde{x}_k))
+=\\ (1+\lambda\tau)(x_{\Delta}(t_k)-\tilde{x}_{\Delta}(t_k))
+$$
+
+$$
+\|x_{\Delta}(t_{k+1}) - \tilde{x}_{\Delta}(t_{k+1})\|_\infty =
+|1+\tau\lambda|\|x_0 - \tilde{x}_k\|
+$$
+
+$$
+\tau > 0
+$$
+
+$$
+\lambda < 0 \to |\lambda| = -\lambda
+$$
+
+$$
+\tau|\lambda| > 0\\
+-\tau\lambda > 0\\
+\tau\lambda<0\\
+1+\tau\lambda<1\\
+0<|1+\tau\lambda| < 1
+$$
+
+da dieser Term kleiner als 1 ist, anhand der Definintion von absoluter
+Kondition hat er keinen Einfluss of den ganzen Term, gilt die Aussage:
+
+$$
+\|x_{\Delta}(t_{k+1}) - \tilde{x}_{\Delta}(t_{k+1})\|_\infty =
+|x_0 - \tilde{x}_k|
+$$
