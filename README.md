@@ -19,6 +19,7 @@ Master
 2. [Foundations in Computer Science (W23/24)](FCS.md)
 3. [Foundations in Mathematics and Statistics (W23/24)](FMathStats.md)
 4. [Introduction to Focus Areas (W23/24)](FocusAreas.md)
+5. [Machine Learning in Bioinformatics (S25)](MLiB.md)
 
 
 ## How to Use This Repository
